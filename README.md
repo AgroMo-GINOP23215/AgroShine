@@ -15,10 +15,14 @@ AgroShine will provide a convinient web based interface to BBGC-MuSo, to make th
 We chose one of the simpliest and most robust way for creating GUI: [RShiny](https://shiny.rstudio.com/) and [Plotly](https://plot.ly/). To use these package, we have to posess a framework in [R](https://www.r-project.org/) for it. For this purpuse we created an R package, called: [RBBGCMuso](https://github.com/hollorol/RBBGCMuso).
 
 ## Tasks
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
+
+### January
+- [x] Creating github organisation, repository (task 1)
+- [x] Creating first README file for Github. (task 2)
+- [x] Examining [grammer of graphics](http://www.springer.com/gp/book/9780387245447), and make some good plot for MuSo (task 3)
+- [x] Examining Plotly and make some interactive graphics (task 3)
+- [ ] Examining RShiny and make a simple web application (task 4)
+- [ ] Making a demo application for the meeting (2018-01-31) (task 5) 
 
 
 
