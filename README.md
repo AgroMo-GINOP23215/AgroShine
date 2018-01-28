@@ -22,6 +22,7 @@ We chose one of the simpliest and most robust way for creating GUI: [RShiny](htt
 - [x] Creating first README file for Github. (task 2)
 - [x] Examining [grammer of graphics](http://www.springer.com/gp/book/9780387245447), and make some good plot for MuSo (task 3)
 - [x] Examining Plotly and make some interactive graphics (task 3)
+- [x] Examining dlpyr package for faster database handling, learn the base conception, and change every dataframe
 - [ ] Examining RShiny and make a simple web application (task 4)
 - [ ] Making a demo application for the meeting (2018-01-31) (task 5) 
 
