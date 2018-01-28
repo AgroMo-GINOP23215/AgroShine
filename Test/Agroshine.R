@@ -6,18 +6,25 @@ library(ggplot2) # Package for "grammer of graphics style" plot making
 library(plotly) # Package for making interactive graphics
 library(RBBGCMuso) # BBGCMuSo R framework package
 
+rm_999 <- function(x){
+    x[x==-999.9]<-NA
+    return(x)
+}
+
 
 mesUnit<-c("","","(°C)","(°C)","(°C)","(cm)","(Pa)","(Wm^₂)","(s)")
 measuredData <- read.table("./hhs_maxLH_LH0_datactrl.txt",header=TRUE) %>%
     tbl_df()
+measuredData<-rm_999(measuredData)
 
 metData <- read.table("hhs_2009-2011.mtc43",skip=4) %>%
     tbl_df()
+metData<-rm_999(metData)
 
 colnames(metData) <-read.table("hhs_2009-2011.mtc43",skip=2,nrows = 1) %>%
     unlist() %>%
     as.character %>%
-    paste(mesUnit)
+    {paste(.,mesUnit)}
 
 rm(mesUnit)
 
@@ -33,7 +40,9 @@ combinedData %<>%
     {cbind(.,combinedData)} %T>% # Tee pipeline 
     {`<-`(`[`(colnames(.),1),"date")} %>%
     tbl_df()
-colnames(combinedData)
+
+
+
 ## It seem too offuscated, but has a lot of adventage: it is more reliable,
 ## more efficient in both memory and cpu term, so I use semi-functional approach here
 ## This code is more efficient equialent of this:
@@ -48,18 +57,33 @@ colnames(combinedData)
 ## dates<-apply(combinedData[c(2,3,1)],1,function (x) paste(x,collapse="/"))
 ## combinedData<-cbind(as.Date(dates,"%m/%d/%Y"),combinedData)
 ## colnames(combinedData)[1]<-"date"
+ggplot(combinedData,aes(`date`,`prcp (cm)`,col=as.factor(`year`), group=as.factor(`year`)))+geom_point()
 
 ui <- fluidPage(
     selectInput(inputId = "varName",
                 label="variables",
                 choices = colnames(combinedData),
-                selected = `GPPmes`),
-    plotOutput(outputId = "")
+                selected = "GPPmes"),
+     plotOutput(outputId = "selected"),
+    verbatimTextOutput("debug")
 )
 
 server<-function(input,output){
-    output$hist <- renderPlot(
-        {hist(rnorm(input$n))}
-    )
+   
+     output$selected <- renderPlot(
+     {
+        
+         ggplot(combinedData,aes(`date`,unlist(combinedData[input$varName]),
+                                 col=as.factor(`year`), group=as.factor(`year`)))+geom_point()
+        
+     }
+     )
+    
+output$debug <- renderText({
+    paste0("x=", length(unlist(combinedData[input$varName])))
+  })
+    
 }
 shinyApp(ui=ui,server=server)
+
+
