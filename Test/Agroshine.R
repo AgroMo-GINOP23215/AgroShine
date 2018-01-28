@@ -1,19 +1,24 @@
+rm(list=ls())
 library(shiny)
 library(dplyr)
 library(ggplot2)
 library(RBBGCMuso)
 
-measuredData<-read.table("./hhs_maxLH_LH0_datactrl.txt",header=TRUE) %>%
+mesUnit<-c("","","(°C)","(°C)","(°C)","(cm)","(Pa)","(Wm^₂)","(s)")
+measuredData <- read.table("./hhs_maxLH_LH0_datactrl.txt",header=TRUE) %>%
     tbl_df()
 
-read.table("hhs_2009-2011.mtc43",skip=4)
-metNames<-as.character(unlist(read.table("hhs_2009-2011.mtc43",skip=2,nrows = 1)))
-mesUnit<-c("","","(°C)","(°C)","(°C)","(cm)","(Pa)","(Wm^₂)","(s)")
-metNames<-paste(metNames,mesUnit)
-colnames(metData)<-metNames
+metData <- read.table("hhs_2009-2011.mtc43",skip=4) %>%
+    tbl_df()
+
+colnames(metData) <-read.table("hhs_2009-2011.mtc43",skip=2,nrows = 1) %>%
+    unlist() %>%
+    as.character %>%
+    paste(mesUnit)
 
 
 ui <- fluidPage(
+    selectInput(inputId = "varName")
     numericInput(inputId = "n",
                  "Sample size", value =25),
     plotOutput(outputId = "hist")
