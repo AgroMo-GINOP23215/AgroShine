@@ -17,6 +17,7 @@ We chose one of the simpliest and most robust way for creating GUI: [RShiny](htt
 ## Tasks
 
 ### January
+
 - [x] Creating github organisation, repository (task 1)
 - [x] Creating first README file for Github. (task 2)
 - [x] Examining [grammer of graphics](http://www.springer.com/gp/book/9780387245447), and make some good plot for MuSo (task 3)
@@ -24,5 +25,6 @@ We chose one of the simpliest and most robust way for creating GUI: [RShiny](htt
 - [ ] Examining RShiny and make a simple web application (task 4)
 - [ ] Making a demo application for the meeting (2018-01-31) (task 5) 
 
-
+### February
+- [ ] Design an interface between RBBGCMuso and the graphical environment.
 

@@ -1,0 +1,62 @@
+---
+title: "MuSo adatok ábrázolása"
+author: "Hollós Roland"
+date: "2018. Január 24."
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Bevezetés
+
+A jelen dokumentumot markdown dokumentumleíró nyelvben írom, mivel az egyszerű szintaxisa ellenére (vagy eredményeképp) annak konzisztens szerkesztése garantálható valamint a nyelvbe lehet illeszteni kód részleteket, amik a dokumentum lefordulásakor végrehajtódnak. A végrehajtás után a kód kimenete a kimeneti file-ba íródik, ami lehet:
+
+1. Pdf  (LaTeXet igényel)
+2. Html
+3. Word (Pandocot igényel)
+
+A markdown file kiterjesztése rmd lesz (R markdown), a file az R kód gyökér könyvtárában kell, hogy szerepeljen.
+
+## Adatbevitel
+
+Mint minden automatikus rendszernek, az RBBGCMuso-nak (innentől RMuso) szüksége lesz egy megfelelő protokollja, ami alapján az adatokat fel lehet tölteni. Itt a legfelhasználóbarátabb megoldások mind csökkentik a felület adta szabadsági fokot, minél kissebb a szabadság, annál nagyobb az átláthatóság, annál könnyebben használható a rendszer. Például az operációs rendszerek beállításainál nyilvánvalóan a parancssor sokkal nagyobb szabadságot ad, mint bármilyen grafikus felület.
+
+### Mérési adatok beolvasása
+```{r input}
+library(RBBGCMuso)
+#Header TRUE, mivel a mérési adatok file-jának első sora a változóneveket tartalmazza
+measuredData<-read.table("hhs_maxLH_LH0_datactrl.txt",header=TRUE)
+measuredData<-as.data.frame(measuredData)
+head(measuredData)
+```
+
+### Meteorológiai adatok beolvasása
+
+```{r}
+metData<-read.table("hhs_2009-2011.mtc43",skip=4)
+metNames<-as.character(unlist(read.table("hhs_2009-2011.mtc43",skip=2,nrows = 1)))
+mesUnit<-c("","","(°C)","(°C)","(°C)","(cm)","(Pa)","(Wm^₂)","(s)")
+metNames<-paste(metNames,mesUnit)
+colnames(metData)<-metNames
+head(metData)
+
+```
+
+### Adatok kombinálása egy adattömbbe
+
+```{r}
+
+```
+
+
+## Ábrázolás
+
+
+
+```{r }
+
+
+```
+
