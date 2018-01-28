@@ -6,7 +6,7 @@ The AgroShine repository is the first atempt to creating GUI for the BBGC-MuSo m
 
 ## AgroShine goals
 
-To use the BBGC-MuSo model use have to provide several imput files(meteo., ecophys.,init.,...). Handle these manually is quite difficoult, and require additional programs for example text editors, furthermore use can only use commandline with no interface. In spite of the accuracy and feature-richness of the modell these features are hard to be exploited.
+To use the BBGC-MuSo model use have to provide several imput files (meteo., ecophys.,init.,...). Handle these manually is quite difficoult and require additional programs for example text editors, furthermore the users can only use commandline with only a basic interface. In spite of the accuracy and feature-richness of the modell these [features] are hard to be exploited.
 
 AgroShine will provide a convinient web based interface to BBGC-MuSo, to make the modell user-friendly enough to use in AgroMo.
 
@@ -21,10 +21,10 @@ We chose one of the simpliest and most robust way for creating GUI: [RShiny](htt
 - [x] Creating github organisation, repository (task 1)
 - [x] Creating first README file for Github. (task 2)
 - [x] Examining [grammer of graphics](http://www.springer.com/gp/book/9780387245447), and make some good plot for MuSo (task 3)
-- [x] Examining Plotly and make some interactive graphics (task 3)
-- [x] Examining dlpyr package for faster database handling, learn the base conception, and change every dataframe
-- [ ] Examining RShiny and make a simple web application (task 4)
-- [ ] Making a demo application for the meeting (2018-01-31) (task 5) 
+- [x] Examining Plotly and make some interactive graphics (task 4)
+- [x] Examining dlpyr package for faster database handling, learn the base conception, and change every dataframe (task 5)
+- [ ] Examining RShiny and make a simple web application (task 6)
+- [ ] Making a demo application for the meeting (2018-01-31) (task 7) 
 
 ### February
 - [ ] Design an interface between RBBGCMuso and the graphical environment.
