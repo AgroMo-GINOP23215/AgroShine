@@ -21,10 +21,10 @@ We chose one of the simpliest and most robust way for creating GUI: [RShiny](htt
 - [x] Creating github organisation, repository (task 1)
 - [x] Creating first README file for Github. (task 2)
 - [x] Examining [grammer of graphics](http://www.springer.com/gp/book/9780387245447), and make some good plot for MuSo (task 3)
-- [x] Examining Plotly and make some interactive graphics (task 4)
-- [x] Examining dlpyr package for faster database handling, learn the base conception, and change every dataframe (task 5)
-- [x] Examining magrittr package for pipelining capabilities (task 5)
-- [x] Examining RShiny and make a simple web application (task 6)
+- [x] Examining [Plotly](https://plot.ly/) and make some interactive graphics (task 4)
+- [x] Examining [dlpyr](http://dplyr.tidyverse.org/) package for faster database handling, learn the base conception, and change every dataframe (task 5)
+- [x] Examining [magrittr](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html) package for pipelining capabilities (task 5)
+- [x] Examining [RShiny](https://www.r-project.org/) and make a simple web application (task 6)
 - [ ] Making a demo application for the meeting (2018-01-31) (task 7) 
 
 ### February
