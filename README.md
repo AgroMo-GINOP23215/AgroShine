@@ -12,21 +12,38 @@ AgroShine will provide a convinient web based interface to BBGC-MuSo, to make th
 
 ## Tools and methods
 
-We chose one of the simpliest and most robust way for creating GUI: [RShiny](https://shiny.rstudio.com/) and [Plotly](https://plot.ly/). To use these package, we have to posess a framework in [R](https://www.r-project.org/) for it. For this purpuse we created an R package, called: [RBBGCMuso](https://github.com/hollorol/RBBGCMuso).
+We chose one of the simpliest and most robust way for creating GUI: [RShiny](https://shiny.rstudio.com/) and [Plotly](https://plot.ly/). To use these package, we have to posess a framework in [R](https://www.r-project.org/) for it. For this purpuse we created an R package, called: [RBBGCMuso](https://github.com/hollorol/RBBGCMuso). To be AgroShine a native-like app, we use [Electron](https://electronjs.org/). 
 
 ## Tasks
 
-### January
+### January - 2018
 
 - [x] Creating github organisation, repository (task 1)
 - [x] Creating first README file for Github. (task 2)
 - [x] Examining [grammer of graphics](http://www.springer.com/gp/book/9780387245447), and make some good plot for MuSo (task 3)
 - [x] Examining [Plotly](https://plot.ly/) and make some interactive graphics (task 4)
 - [x] Examining [dlpyr](http://dplyr.tidyverse.org/) package for faster database handling, learn the base conception, and change every dataframe (task 5)
-- [x] Examining [magrittr](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html) package for pipelining capabilities (task 5)
-- [x] Examining [RShiny](https://www.r-project.org/) and make a simple web application (task 6)
-- [ ] Making a demo application for the meeting (2018-01-31) (task 7) 
+- [x] Examining [magrittr](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html) package for pipelining capabilities (task 6)
+- [x] Examining [RShiny](https://www.r-project.org/) and make a simple web application (task 7)
+- [ ] Making a demo application for the meeting (2018-01-31) (task 8) 
 
-### February
+### February - 2018
+
 - [ ] Design an interface between RBBGCMuso and the graphical environment.
+- [ ] Examining [Electron](https://electronjs.org/)
+- [ ] Making an easy Electron app.
+- [ ] Establish the fundamental principles of the aestetics.
+- [ ] Creating graphical themes.
+- [ ] Presentation of the second demo app.
 
+### March - 2018
+
+- [ ] Addig wished features
+- [ ] Creating installer for Linux and Mac
+- [ ] Convert Agroshine to a full native app, version 0.1
+- [ ] Creating installer for Windows
+- [ ] Presentation of the beta-version of MusoShine, version 0.5
+
+### April - 2018
+
+To Be Continued ... 

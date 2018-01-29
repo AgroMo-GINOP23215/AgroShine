@@ -1,4 +1,4 @@
-rm(list=ls())
+rm(list=ls()) # remove all variables to make a new clean environment
 library(shiny) # Webapp making package
 library(dplyr) # Package for fast and elegant databases
 library(magrittr) # R package for functional programing, an pipelineing
@@ -6,20 +6,26 @@ library(ggplot2) # Package for "grammer of graphics style" plot making
 library(plotly) # Package for making interactive graphics
 library(RBBGCMuso) # BBGCMuSo R framework package
 
+
+
 rm_999 <- function(x){
+##This function replaces the -999.9 elements with NA
     x[x==-999.9]<-NA
     return(x)
 }
 
-
 mesUnit<-c("","","(°C)","(°C)","(°C)","(cm)","(Pa)","(Wm^₂)","(s)")
+
+                                        #importing and formatin database
+
+
 measuredData <- read.table("./hhs_maxLH_LH0_datactrl.txt",header=TRUE) %>%
-    tbl_df()
-measuredData<-rm_999(measuredData)
+    tbl_df() %>% #make measuredData local dataframe (it hase a lot of advantage)
+    rm_999()
 
 metData <- read.table("hhs_2009-2011.mtc43",skip=4) %>%
-    tbl_df()
-metData<-rm_999(metData)
+    tbl_df() %>%
+    rm_999()
 
 colnames(metData) <-read.table("hhs_2009-2011.mtc43",skip=2,nrows = 1) %>%
     unlist() %>%
@@ -29,12 +35,12 @@ colnames(metData) <-read.table("hhs_2009-2011.mtc43",skip=2,nrows = 1) %>%
 rm(mesUnit)
 
 combinedData <- metData %>%
-    extract(,-c(1,2)) %>% #not using 1:2 because optimization
+    select(.,-c(1,2)) %>% #not using 1:2 because optimization
     cbind(measuredData,.) %>%
     tbl_df() #somehow combinedData is not local datafram anymore, so...
 
 combinedData %<>%
-    extract(,c(2,3,1)) %>%
+    select(.,c(2,3,1)) %>%
     apply(.,1,function(x) paste(x,collapse = "/")) %>%
     as.Date(.,"%m/%d/%Y") %>%
     {cbind(.,combinedData)} %T>% # Tee pipeline 
@@ -60,6 +66,7 @@ combinedData %<>%
 ggplot(combinedData,aes(`date`,`prcp (cm)`,col=as.factor(`year`), group=as.factor(`year`)))+geom_point()
 
 ui <- fluidPage(
+
     titlePanel(title = "AgroShine"),
 
     sidebarLayout(
@@ -67,36 +74,23 @@ ui <- fluidPage(
             selectInput(inputId = "varName",
                 label="variables",
                 choices = colnames(combinedData),
-                selected = "GPPmes")
-        ),
+                selected = "GPPmes")),
 
         mainPanel(
-            plotOutput(outputId = "selected"),
-            verbatimTextOutput("debug")
-        )
-    )
-    
- )
+            plotOutput(outputId = "selected1"),
+            plotOutput(outputId = "selected2"),
+            verbatimTextOutput("debug"))))
 
-   selectInput(inputId = "varName",
-                label="variables",
-                choices = colnames(combinedData),
-                selected = "GPPmes"),
-     plotOutput(outputId = "selected"),
-    verbatimTextOutput("debug")
 
 
 
 
 server<-function(input,output){
    
-     output$selected <- renderPlot(
-     {
+     output$selected1 <- renderPlot({
         
          ggplot(combinedData,aes(`date`,unlist(combinedData[input$varName]),
-                                 col=as.factor(`year`), group=as.factor(`year`)))+geom_point()
-        
-     }
+                                 col=as.factor(`year`), group=as.factor(`year`)))+geom_point()}
      )
     
 output$debug <- renderText({
