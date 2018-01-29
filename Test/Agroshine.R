@@ -60,13 +60,33 @@ combinedData %<>%
 ggplot(combinedData,aes(`date`,`prcp (cm)`,col=as.factor(`year`), group=as.factor(`year`)))+geom_point()
 
 ui <- fluidPage(
-    selectInput(inputId = "varName",
+    titlePanel(title = "AgroShine"),
+
+    sidebarLayout(
+        sidebarPanel(
+            selectInput(inputId = "varName",
+                label="variables",
+                choices = colnames(combinedData),
+                selected = "GPPmes")
+        ),
+
+        mainPanel(
+            plotOutput(outputId = "selected"),
+            verbatimTextOutput("debug")
+        )
+    )
+    
+ )
+
+   selectInput(inputId = "varName",
                 label="variables",
                 choices = colnames(combinedData),
                 selected = "GPPmes"),
      plotOutput(outputId = "selected"),
     verbatimTextOutput("debug")
-)
+
+
+
 
 server<-function(input,output){
    
@@ -80,7 +100,7 @@ server<-function(input,output){
      )
     
 output$debug <- renderText({
-    paste0("x=", length(unlist(combinedData[input$varName])))
+    paste0("Debugging=", length(unlist(combinedData[input$varName])))
   })
     
 }
