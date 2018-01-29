@@ -12,7 +12,7 @@ AgroShine will provide a convinient web based interface to BBGC-MuSo, to make th
 
 ## Tools and methods
 
-We chose one of the simpliest and most robust way for creating GUI: [RShiny](https://shiny.rstudio.com/) and [Plotly](https://plot.ly/). To use these package, we have to posess a framework in [R](https://www.r-project.org/) for it. For this purpuse we created an R package, called: [RBBGCMuso](https://github.com/hollorol/RBBGCMuso). To be AgroShine a native-like app, we use [Electron](https://electronjs.org/). 
+We chose one of the simpliest and most robust way for creating GUI: [RShiny](https://shiny.rstudio.com/) and [Plotly](https://plot.ly/). To use these package, we have to posess a framework in [R](https://www.r-project.org/) for it. For this purpuse we created an R package, called: [RBBGCMuso](https://github.com/hollorol/RBBGCMuso). To make AgroShine a native-like app, we use [Electron](https://electronjs.org/). 
 
 ## Tasks
 
