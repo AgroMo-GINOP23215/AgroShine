@@ -1,4 +1,13 @@
-requiredPackages <- c("shinythemes","shiny","dplyr", "magrittr", "ggplot2","plotly","RBBGCMuso")
+requiredPackages <- c("shinythemes",
+                      "shiny",
+                      "shinydashboard",
+                      "dplyr",
+                      "pryr",
+                      "magrittr",
+                      "ggplot2",
+                      "plotly",
+                      "RBBGCMuso")
+
 pInstall <- is.element(requiredPackages,installed.packages()[,1])
 if(prod(pInstall)){
     
@@ -9,11 +18,11 @@ if(prod(pInstall)){
 lapply(requiredPackages,require, character.only=TRUE)
 
 
-rm(list=ls()) # remove all variables to make a new clean environment
+rm(list = ls()) # remove all variables to make a new clean environment
 
 rm_999 <- function(x){
 ##This function replaces the -999.9 elements with NA
-    x[x==-999.9]<-NA
+    x[x == -999.9] <- NA
     return(x)
 }
 
@@ -23,7 +32,7 @@ mesUnit<-c("","","(°C)","(°C)","(°C)","(cm)","(Pa)","(Wm^₂)","(s)")
                                         #importing and formatin database
 
 
-measuredData <- read.table("./hhs_maxLH_LH0_datactrl.txt",header=TRUE) %>%
+measuredData <- read.table("./hhs_maxLH_LH0_datactrl.txt", header = TRUE) %>%
     tbl_df() %>% #make measuredData local dataframe (it hase a lot of advantage)
     rm_999()
 
@@ -31,7 +40,7 @@ metData <- read.table("hhs_2009-2011.mtc43",skip=4) %>%
     tbl_df() %>%
     rm_999()
 
-colnames(metData) <-read.table("hhs_2009-2011.mtc43",skip=2,nrows = 1) %>%
+colnames(metData) <- read.table("hhs_2009-2011.mtc43", skip = 2, nrows = 1) %>%
     unlist() %>%
     as.character %>%
     {paste(.,mesUnit)}
@@ -67,7 +76,6 @@ combinedData %<>%
 ## dates<-apply(combinedData[c(2,3,1)],1,function (x) paste(x,collapse="/"))
 ## combinedData<-cbind(as.Date(dates,"%m/%d/%Y"),combinedData)
 ## colnames(combinedData)[1]<-"date"
-ggplot(combinedData,aes(`date`,`prcp (cm)`,col=as.factor(`year`), group=as.factor(`year`)))+geom_point()
 
 ui <- fluidPage(
 
@@ -97,7 +105,8 @@ server<-function(input,output){
      output$selected <- renderPlot({
          if(input$time=="all"){
          ggplot(combinedData,aes(`date`,unlist(combinedData[input$varName]),
-                                 col=as.factor(`year`), group=as.factor(`year`)))+geom_point()
+                                 col=as.factor(`year`),
+                                 group=as.factor(`year`)))+geom_point()
          } else {
              combinedData %>%
                  filter(.,year==input$time) %>%
