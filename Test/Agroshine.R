@@ -69,35 +69,46 @@ ui <- fluidPage(
 
     titlePanel(title = "AgroShine"),
 
+    
     sidebarLayout(
+
         sidebarPanel(
             selectInput(inputId = "varName",
                 label="variables",
                 choices = colnames(combinedData),
-                selected = "GPPmes")),
+                selected = "GPPmes"),
 
+            selectInput(inputId = "time",
+                        label="years",
+                        choices = c(unique(combinedData$year),"all"),
+                        selected = "all")),
+
+        
         mainPanel(
-            plotOutput(outputId = "selected1"),
-            plotOutput(outputId = "selected2"),
+            plotOutput(outputId = "selected"),
             verbatimTextOutput("debug"))))
-
-
-
-
 
 server<-function(input,output){
    
-     output$selected1 <- renderPlot({
-        
+     output$selected <- renderPlot({
+         if(input$time=="all"){
          ggplot(combinedData,aes(`date`,unlist(combinedData[input$varName]),
-                                 col=as.factor(`year`), group=as.factor(`year`)))+geom_point()}
-     )
+                                 col=as.factor(`year`), group=as.factor(`year`)))+geom_point()
+         } else {
+             combinedData %>%
+                 filter(.,year==input$time) %>%
+             ggplot(.,aes(`date`,select(.,input$varName)))+geom_point()
+      }   
+     })
     
-output$debug <- renderText({
-    paste0("Debugging=", length(unlist(combinedData[input$varName])))
-  })
+    output$debug <- renderText({
+        paste0("Debugging=", length(unlist(combinedData[input$varName])))
+    })
+
     
 }
-shinyApp(ui=ui,server=server)
 
+## shinyApp(ui=ui,server=server) runApp is more flexible way to run the app.
+
+runApp(list(ui=ui,server=server),launch.browser = T)
 
