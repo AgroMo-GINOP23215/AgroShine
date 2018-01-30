@@ -1,18 +1,22 @@
+requiredPackages <- c("shinythemes","shiny","dplyr", "magrittr", "ggplot2","plotly","RBBGCMuso")
+pInstall <- is.element(requiredPackages,installed.packages()[,1])
+if(prod(pInstall)){
+    
+} else {
+    install.packages(
+        requiredPackages[!pInstall]
+    )}
+lapply(requiredPackages,require, character.only=TRUE)
+
+
 rm(list=ls()) # remove all variables to make a new clean environment
-library(shiny) # Webapp making package
-library(dplyr) # Package for fast and elegant databases
-library(magrittr) # R package for functional programing, an pipelineing
-library(ggplot2) # Package for "grammer of graphics style" plot making
-library(plotly) # Package for making interactive graphics
-library(RBBGCMuso) # BBGCMuSo R framework package
-
-
 
 rm_999 <- function(x){
 ##This function replaces the -999.9 elements with NA
     x[x==-999.9]<-NA
     return(x)
 }
+
 
 mesUnit<-c("","","(°C)","(°C)","(°C)","(cm)","(Pa)","(Wm^₂)","(s)")
 
