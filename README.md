@@ -25,10 +25,11 @@ We chose one of the simpliest and most robust way for creating GUI: [RShiny](htt
 - [x] Examining [dlpyr](http://dplyr.tidyverse.org/) package for faster database handling, learn the base conception, and change every dataframe (task 5)
 - [x] Examining [magrittr](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html) package for pipelining capabilities (task 6)
 - [x] Examining [RShiny](https://www.r-project.org/) and make a simple web application (task 7)
-- [ ] Making a demo application for the meeting (2018-01-31) (task 8) 
+- [x] Making a demo application for the meeting (2018-01-31) (task 8) 
 
 ### February - 2018
-
+- [x] Learning the basincs of GIS with GRASS, QGIS (task 9)
+- [x] Examining sp package in R. (task 10)
 - [ ] Design an interface between RBBGCMuso and the graphical environment.
 - [ ] Examining [Electron](https://electronjs.org/)
 - [ ] Making an easy Electron app.
