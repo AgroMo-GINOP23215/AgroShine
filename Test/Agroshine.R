@@ -65,6 +65,7 @@ importPackages <- function(requiredPackages=NULL){
                               "magrittr",
                               "ggplot2",
                               "plotly",
+                             "rgda1",
                               "RBBGCMuso")
     }
 
@@ -78,10 +79,10 @@ importPackages <- function(requiredPackages=NULL){
     lapply(requiredPackages,require, character.only=TRUE)
 }
 
-rm_999 <- function(x){
+rmNa <- function(dataTable,NAvalue=-999.9){
 ##This function replaces the -999.9 elements with NA
-    x[x == -999.9] <- NA
-    return(x)
+    dataTable[dataTable == NAvalue] <- NA
+    return(dataTable)
 }
 
 

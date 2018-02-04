@@ -1,0 +1,68 @@
+---
+title: "A musoMapColourizer függvény készítése"
+author: "Hollós Roland"
+date: "February 1, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Fontos csomagok betöltése, importálás.
+
+
+
+```{r library}
+rm(list=ls()) # Minden fölösleges változó törlése
+
+source("agroFunctions.R") # saját Agromohoz kötődő függvények betöltése (ebben van az importpackage is)
+
+importPackages(
+#Importing the necessary packages
+    c("rgdal", # This requires gdal and libgdal-dev sofwares
+               # presenting in the computer 
+      "maptools",
+      "ggplot2",
+      "broom",
+      "plyr")
+)
+
+```
+
+## Shape file betöltése
+
+
+```{r}
+hungaryGrid<- readOGR(dsn="../CCMO_racs_teljes_mo_eov.shp")
+```
+
+
+## Első próba
+
+```{r}
+plot(hungaryGrid)
+```
+
+## Második próba
+
+Nagyon szeretnék minden ábrakészítéshez ggplot-ot használni. Ehhez az amúgy bonyomult felépítésű dataShape objektumot fogom először egyszerűbb data.frame típusba konvertálni a "broom" csomag segítségével
+
+```{r}
+hungaryGrid<- broom::tidy(hungaryGrid)
+
+head(hungaryGrid)
+```
+
+Ezek után én már nem szeretném (nem is lesz szükséges) használni az eredeti shape-filet, így lementem, innentől majd az AgoMonak nem lesz szüksége az rgdal csomagra. Ez azért szerencse, mert így nem kell majd feltelepítenie egy térinformatikai szoftvert.
+
+```{r}
+saveRDS(hungaryGrid,"hungaryGrid.rds")
+```
+
+```{r}
+ggplot(hungaryGrid)+aes(long,lat)+geom_path()
+```
+
+
+
