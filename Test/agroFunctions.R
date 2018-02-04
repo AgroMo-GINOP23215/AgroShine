@@ -1,5 +1,5 @@
 importPackages <- function(requiredPackages=NULL){
-
+## This function loads the required packages, and if these ara not installed, it installs
     if(is.null(requiredPackages)){
         requiredPackages <- c("shinythemes",
                               "ggiraphExtra",
@@ -29,3 +29,5 @@ rmNa <- function(dataTable,NAvalue=-999.9){
     dataTable[dataTable == NAvalue] <- NA
     return(dataTable)
 }
+
+cat("Available functions are: \n importPackages \n rmNA \n")
