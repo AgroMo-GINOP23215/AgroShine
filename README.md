@@ -1,4 +1,4 @@
-# AgroShine - The first attempt to visualize the Biome-BGCMuSo model throught RBBGCMuso
+# AgroShine - The first attempt to visualize Biome-BGCMuSo model results throught RBBGCMuso
 
 ## Introduction
 
