@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The AgroShine repository is the first attempt to create a GUI for the [Biome-BGCMuSo model](http://nimbus.elte.hu/bbgc/), which will be a part of the bigger AgroMo multi (or meta) model. The Agromo is an integrated biogeochemical framework for agriculture, which works well for the Hungarian climatical environment. Further information on the project: (http://www.agrar.mta.hu/hu/kutatomuhely_sajtok)
+The AgroShine repository is the first attempt to create a GUI for the [Biome-BGCMuSo model](http://nimbus.elte.hu/bbgc/), which will be a part of the bigger AgroMo multi (or meta) model. The Agromo is an integrated biogeochemical framework for agriculture, which works well for the Hungarian climatical environment. Further information on the project: (http://nimbus.elte.hu/agromo/)
 
 ## AgroShine goals
 
