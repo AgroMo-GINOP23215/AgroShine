@@ -6,7 +6,7 @@ The AgroShine repository is the first attempt to creating GUI for the BBGC-MuSo 
 
 ## AgroShine goals
 
-To use the BBGC-MuSo model use have to provide several imput files (meteo., ecophys.,init.,...). Handle these manually is quite difficoult and require additional programs for example text editors, furthermore the users can only use commandline with only a basic interface. In spite of the accuracy and feature-richness of the modell these [features] are hard to be exploited.
+To use the BBGC-MuSo model use have to provide several imput files (meteo., ecophys., init., ...). Handle these manually is quite difficoult and require additional programs for example text editors, furthermore the users can only use commandline with only a basic interface. In spite of the accuracy and feature-richness of the modell these [features] are hard to be exploited.
 
 AgroShine will provide a convinient web based interface to BBGC-MuSo, to make the modell user-friendly enough to use in AgroMo.
 
