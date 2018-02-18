@@ -1,4 +1,4 @@
-# AgroShine - The first attempt to visualize the BBGC-MuSo model throught RBBGCMuso
+# AgroShine - The first attempt to visualize the Biome-BGCMuSo model throught RBBGCMuso
 
 ## Introduction
 
@@ -6,13 +6,13 @@ The AgroShine repository is the first attempt to creating GUI for the Biome-BGCM
 
 ## AgroShine goals
 
-To use the BBGC-MuSo model use have to provide several input files (meteo., ecophys., init., ...). Handling of these files manually is quite difficult and requires additional programs, for example text editors, furthermore the users can only use command line with only a basic interface. In spite of the accuracy and feature-richness of the modell these [features] are hard to be exploited.
+To use the Biome-BGCMuSo model users have to provide several input files (meteo., ecophys., init., ...). Handling of these files manually is quite difficult and requires additional programs, for example text editors, furthermore the users can only use command line with only a basic interface. In spite of the accuracy and feature-richness of the modell these [features] are hard to be exploited.
 
 AgroShine will provide a convinient web based interface to Biome-BGCMuSo, to make the model user-friendly enough to use in AgroMo.
 
 ## Tools and methods
 
-We chose one of the simpliest and most robust way for creating GUI: [RShiny](https://shiny.rstudio.com/) and [Plotly](https://plot.ly/). To use these package, we have to posess a framework in [R](https://www.r-project.org/) for it. For this purpuse we created an R package, called: [RBBGCMuso](https://github.com/hollorol/RBBGCMuso). To make AgroShine a native-like app, we use [Electron](https://electronjs.org/). 
+We chose one of the simplest and most robust way for creating GUI: [RShiny](https://shiny.rstudio.com/) and [Plotly](https://plot.ly/). To use these packages, we have to posess a framework in [R](https://www.r-project.org/) for it. For this purpuse we created an R package, called: [RBBGCMuso](https://github.com/hollorol/RBBGCMuso). To make AgroShine a native-like app, we use [Electron](https://electronjs.org/). 
 
 ## Tasks
 
