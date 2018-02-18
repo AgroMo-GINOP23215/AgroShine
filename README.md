@@ -1,4 +1,4 @@
-# AgroShine - The first atempt to visualize the BBGC-MuSo modell throught RBBGCMuso
+# AgroShine - The first attempt to visualize the BBGC-MuSo modell throught RBBGCMuso
 
 ## Introduction
 
