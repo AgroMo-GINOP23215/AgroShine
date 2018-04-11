@@ -3,10 +3,22 @@ library(devtools)
 library(Rcpp)
 library(dplyr)
 library(magrittr)
-library(curl)
 
-curl_download("https://github.com/AgroMo-GINOP23215/AgroShine/blob/master/MonteCarlo/musoRandom.cpp","musoRandom.cpp")
-curl_download("https://github.com/AgroMo-GINOP23215/AgroShine/blob/master/MonteCarlo/musoRandom.cpp","musoRandom.cpp")
+if(Sys.info()[1]=="Linux"){
+download.file("https://raw.github.com/AgroMo-GINOP23215/AgroShine/blob/master/MonteCarlo/musoRandom.cpp","musoRandom.cpp",mode = "wb",method = "curl")
+} else {
+    download.file("https://raw.github.com/AgroMo-GINOP23215/AgroShine/blob/master/MonteCarlo/musoRandom.cpp","musoRandom.cpp",mode = "wb",method = "wininet")
+}
+
+
+
+
+download.file("https://github.com/AgroMo-GINOP23215/AgroShine/blob/master/MonteCarlo/OtableMaker.R","OtableMaker.R",mode="wb")
+?curl_download
+
+sourceCpp("musoRandom.cpp")
+
+x <- 
 
 inputDir <- "./"
 list.files(inputDir)
