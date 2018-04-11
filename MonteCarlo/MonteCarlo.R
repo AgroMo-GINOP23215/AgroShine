@@ -18,7 +18,6 @@ download.file("https://github.com/AgroMo-GINOP23215/AgroShine/blob/master/MonteC
 
 sourceCpp("musoRandom.cpp")
 
-x <- 
 
 inputDir <- "./"
 list.files(inputDir)
