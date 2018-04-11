@@ -1,0 +1,135 @@
+NAME,INDEX,UNIT,DEPENDENCE,MIN,MAX,GROUP,TYPE
+yearday to start new growth,21,yday,,0,364,0,0
+yearday to end new growth,22,yday,,0,364,0,0
+transfer growth period as fraction of growing season,23,prop,,0,1,0,0
+litterfall as fraction of growing season,24,prop,,0,1,0,0
+base temperature,25,Celsius,,-60,60,0,0
+minimum  temperature for growth displayed on current day,26,Celsius,0,-60,60,1,1
+optimal1 temperature for growth displayed on current day,27,Celsius,1,-60,60,1,1
+optimal2 temperature for growth displayed on current day,28,Celsius,2,-60,60,1,1
+maxmimum temperature for growth displayed on current day,29,Celsius,3,-60,60,1,1
+minimum  temperature for carbon assimilation displayed on current day,30,Celsius,0,-60,60,2,1
+optimal1 temperature for carbon assimilation displayed on current day,31,Celsius,1,-60,60,2,1
+optimal2 temperature for carbon assimilation displayed on current day,32,Celsius,2,-60,60,2,1
+maxmimum temperature for carbon assimilation displayed on current day,33,Celsius,3,-60,60,2,1
+annual leaf and fine root turnover fraction,34,1/yr,,0,1,0,0
+annual live wood turnover fraction,35,1/yr,,0,1,0,0
+annual whole-plant mortality fraction,36,1/yr,,0,1,0,0
+annual fire mortality fraction,37,1/yr,,0,1,0,0
+C:N of leaves,38,kgC/kgN,0,0,200,3,1
+C:N of leaf litter,39,kgC/kgN,1,0,200,3,1
+C:N of fine roots,40,kgC/kgN,1,0,200,3,1
+C:N of fruit,41,kgC/kgN,1,0,200,3,1
+C:N of softstem,42,kgC/kgN,1,0,200,3,1
+C:N of live wood,43,kgC/kgN,1,0,200,3,1
+C:N of dead wood,44,kgC/kgN,1,0,2000,3,1
+leaf litter labile proportion,45,prop,1,0,1,4,2
+leaf litter cellulose proportion,46,prop,1,0,1,4,2
+fine root labile proportion,47,prop,1,0,1,5,2
+fine root cellulose proportion,48,prop,1,0,1,5,2
+fruit labile proportion,49,prop,1,0,1,6,2
+fruit cellulose proportion,50,prop,1,0,1,6,2
+softstem labile proportion,51,prop,1,0,1,7,2
+softstem cellulose proportion,52,prop,1,0,1,7,2
+dead wood cellulose proportion,53,prop,,0,0,0,0
+canopy water interception coefficient,54,1/LAI/d,,0,1,0,0
+canopy light extinction coefficient,55,dimless,,0,1,0,0
+potential radiation use efficiency,56,g/MJ,,0,10,0,0
+radiation parameter1 (Jiang et al.2015),57,dimless,,-100,100,0,0
+radiation parameter1 (Jiang et al.2015),58,dimless,,-100,100,0,0
+all-sided to projected leaf area ratio,59,dimless,,0,5,0,0
+ratio of shaded SLA:sunlit SLA,60,dimless,,0,5,0,0
+fraction of leaf N in Rubisco,61,dimless,,0,1,0,0
+fraction of leaf N in PeP,62,dimless,,0,1,0,0
+maximum stomatal conductance ,63,m/s,,0,0.1,0,0
+cuticular conductance ,64,m/s,,0,0.001,0,0
+boundary layer conductance,65,m/s,,0,1,0,0
+rel. SWC: limitation1 (prop to field capacity),66,prop,,0,1,0,0
+rel. SWC: limitation2 (prop to saturation),67,prop,,0,1,0,0
+rel. soil water potential: limitation1 (prop to field capacity),68,prop,,0,1,0,0
+rel. soil water potential: limitation2 (prop to saturation),69,prop,,0,1,0,0
+vapor pressure deficit: start of conductance reduction,70,Pa,,0,5000,0,0
+vapor pressure deficit: complete conductance reduction,71,Pa,,0,10000,0,0
+maximum height of plant,72,m,,0,10,0,0
+stem weight at which maximum height attended,73,kgC/m2,,0,1000,0,0
+maximum depth of rooting zone,74,m,,0,10,0,0
+root distribution parameter,75,prop,,0,10,0,0
+rootlenght parameter 1 (estimated max root weight),76,kgC/m2,,0,10,0,0
+rootlenght parameter 2 (slope),77,prop,,0,1,0,0
+growth resp per unit of C grown,78,prop,,0,1,0,0
+maintenance respiration in kgC/day per kg of tissue N ,79,kgC/kgN/d,,0,1,0,0
+theoretical maximum prop. of non-structural and structural carbohydrates,80,dimless,,0,1,0,0
+prop. of non-structural carbohydrates available for maintanance resp,81,dimless,,0,1,0,0
+symbiotic+asymbiotic fixation of N,82,kgN/m2/yr,,0,0.01,0,0
+critical relative SWC (prop. to FC) in germination,87,prop,,0,1,0,0
+critical photoslow daylength,88,hour,,0,24,0,0
+slope of relative photoslow development rate ,90,prop,,0,1,0,0
+critical vernalization temperature 1,92,Celsius,0,-60,60,8,1
+critical vernalization temperature 2,93,Celsius,1,-60,60,8,1
+critical vernalization temperature 3,94,Celsius,2,-60,60,8,1
+critical vernalization temperature 4,95,Celsius,3,-60,60,8,1
+slope of relative vernalization development rate ,96,dimless,,0,1,0,0
+required vernalization days (in vernalization development rate),97,n_day,,0,365,0,0
+critical flowering heat stress temperature 1,99,Celsius,0,-60,60,9,1
+critical flowering heat stress temperature 2,100,Celsius,1,-60,60,9,1
+mortality parameter of flowering thermal stress,101,prop,,0,1,0,0
+maximum senescence mortality coefficient of aboveground plant material,104,prop,,0,1,0,0
+maximum senescence mortality coefficient of belowground plant material,105,prop,,0,1,0,0
+maximum senescence mortality coefficient of non-structured plant material,106,prop,,0,1,0,0
+effect of extreme high temperature on senesncene mortality,107,prop,,0,1,0,0
+lower limit of extreme high temperature (senescence mortality effect),108,Celsius,,-60,60,0,0
+upper limit of extreme high temperature (senescence mortality effect),109,Celsius,,-60,60,0,0
+maximal lifetime of plant tissue ,110,Celsius (sum),,0,10000,0,0
+turnover rate of wilted standing biomass to litter,111,prop,,0,1,0,0
+turnover rate of cut-down non-woody biomass to litter,112,prop,,0,1,0,0
+turnover rate of cut-down woody biomass to litter,113,prop,,0,1,0,0
+drought tolerance parameter (critical value of day since water stress),114,n_day,,0,365,0,0
+denitrification rate per g of CO2 respiration of SOM,115,prop,,0,1,0,0
+nitrification coefficient 1 ,116,prop,,0,1,0,0
+nitrification coefficient 2,117,prop,,0,1,0,0
+coefficient of N2O emission of nitrification,118,prop,,0,1,0,0
+proprortion of NH4 flux of N-deposition,119,prop,,0,1,0,0
+NH4 mobilen proportion,120,prop,,0,1,0,0
+NO3 mobilen proportion,212,prop,,0,1,0,0
+e-folding depth of decomposition rate's depth scalar,122,m,,0,100,0,0
+fraction of dissolved part of SOIL1 organic matter,123,prop,,0,1,0,0
+fraction of dissolved part of SOIL2 organic matter,124,prop,,0,1,0,0
+fraction of dissolved part of SOIL3organic matter,125,prop,,0,1,0,0
+fraction of dissolved part of SOIL4 organic matter,126,prop,,0,1,0,0
+ratio of bare soil evaporation and pot.evaporation,127,prop,,0,1,0,0
+respiration fractions for fluxes between compartments (l1s1),130,prop,,0,1,0,0
+respiration fractions for fluxes between compartments (l2s2),131,prop,,0,1,0,0
+respiration fractions for fluxes between compartments (l4s3),132,prop,,0,1,0,0
+respiration fractions for fluxes between compartments (s1s2),133,prop,,0,1,0,0
+respiration fractions for fluxes between compartments (s2s3),134,prop,,0,1,0,0
+respiration fractions for fluxes between compartments (s3s4),135,prop,,0,1,0,0
+rate constant scalar of  labile litter pool,136,dimless,,0,1,0,0
+rate constant scalar of cellulose litter pool,137,dimless,,0,1,0,0
+rate constant scalar of lignin litter pool,138,dimless,,0,1,0,0
+rate constant scalar of  fast microbial recycling pool,139,dimless,,0,1,0,0
+rate constant scalar of  medium microbial recycling pool,140,dimless,,0,1,0,0
+rate constant scalar of  slow microbial recycling pool,141,dimless,,0,1,0,0
+rate constant scalar of  recalcitrant SOM (humus) pool,142,dimless,,0,1,0,0
+rate constant scalar of  physical fragmentation of coarse woody debris,143,dimless,,0,1,0,0
+crit. amount of snow limiting photosyn.,146,kg/m2,,0,100,0,0
+limit1 (under:full constrained) of HEATSUM index,147,Celsius,,0,10000,0,0
+limit2 (above:unconstrained) of HEATSUM index,148,Celsius,,0,10000,0,0
+limit1 (under:full constrained) of TMIN index,149,Celsius,,-60,60,0,0
+limit2 (above:unconstrained) of TMIN index,150,Celsius,,-60,60,0,0
+limit1 (above:full constrained) of VPD index,151,Pa,,0,10000,0,0
+limit2 (under:unconstrained) of VPD index,152,Pa,,0,5000,0,0
+limit1 (under:full constrained) of DAYLENGTH index,153,Pa,,0,86400,0,0
+limit2 (above:unconstrained) of DAYLENGTH index,154,Pa,,0,86400,0,0
+moving average (to avoid the effects of extreme events),155,n_day,,0,365,0,0
+GSI limit1 (greater that limit -> start of vegper),156,dimless,,0,1,0,0
+GSI limit2 (less that limit -> end of vegper),157,dimless,,0,1,0,0
+param1 for CH4 calculations (empirical function of BD),160,dimless,,-1000,1000,0,0
+param2 for CH4 calculations (empirical function of BD),161,dimless,,-10,10,0,0
+param1 for CH4 calculations (empirical function of VWC),162,dimless,,-10,10,0,0
+param2 for CH4 calculations (empirical function of VWC),163,dimless,,-1,1,0,0
+param3 for CH4 calculations (empirical function of VWC),164,dimless,,-10,10,0,0
+param4 for CH4 calculations (empirical function of VWC),165,dimless,,-10,10,0,0
+param1 for CH4 calculations (empirical function of Tsoil),166,dimless,,-0.1,0.1,0,0
+length of phenophase (GDD),170,Celsius (sum),,0,10000,0,0
+canopy average specific leaf area,179,m2/kgC,,0,500,0,0
+current growth proportion,180,prop,,0,1,0,0

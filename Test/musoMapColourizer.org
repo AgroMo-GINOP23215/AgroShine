@@ -1,0 +1,23 @@
+#+TITLE: Magyarországon ábrázoló függvénymodul
+#+CREATOR: Hollós Roland 
+#+BABEL: :session *R*
+#+LATEX_HEADER: \documentclass[12pt,journal]{IEEEtran}
+#+LATEX_HEADER: \frenchspacing
+#+EXPORT_SELECT_TAGS: results
+
+
+
+#+BEGIN_SRC R :exports both :session
+library(RBBGCMuso)
+getwd()
+setwd("..")
+#+END_SRC
+
+#+RESULTS:
+: /home/hollorol/Documents/AgroMo/AGROMO/AgroShine/Test
+
+#+BEGIN_SRC R :exports both :session
+plot(1:3)
+#+END_SRC
+
+#+RESULTS:
