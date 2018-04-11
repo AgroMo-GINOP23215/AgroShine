@@ -3,11 +3,16 @@ library(devtools)
 library(Rcpp)
 library(dplyr)
 library(magrittr)
+library(curl)
+
+curl_download("https://github.com/AgroMo-GINOP23215/AgroShine/blob/master/MonteCarlo/musoRandom.cpp","musoRandom.cpp")
+curl_download("https://github.com/AgroMo-GINOP23215/AgroShine/blob/master/MonteCarlo/musoRandom.cpp","musoRandom.cpp")
 
 inputDir <- "./"
 list.files(inputDir)
-outLoc <-
-    settings <- setupMuso(inputLoc = inputDir)
+outLoc <- "outputs"
+settings <- setupMuso(inputLoc = inputDir)
+
 musoMonte <- function(settings=NULL,parameters,
                        inputDir = "./"
                        outLoc = "./calib", iterations = 10,
@@ -104,3 +109,4 @@ musoMonte <- function(settings=NULL,parameters,
 }
 
 
+file.remove("musoRandom.cpp")
